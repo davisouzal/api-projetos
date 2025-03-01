@@ -4,7 +4,7 @@ from api.repositories.financiadores_repository import FinanciadoresRepository
 from api.serializers.financiadores_serializer import FinanciadoresSerializer
 from api.exceptions import NotFoundException, ValidationException
 
-Financiadores = 'Financiadores'
+Financiadores = 'Financiador'
 
 class FinanciadoresService:
     @staticmethod

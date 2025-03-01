@@ -21,9 +21,9 @@ def financiadores_list(request):
         return Response(errorResponse, status=status_code)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def financiadores_detail(request, pk):
+def financiadores_detail(request, id):
     try:
-        financiador = FinanciadoresService.get_by_id(pk)
+        financiador = FinanciadoresService.get_by_id(id)
 
         if request.method == 'GET':
             return Response(FinanciadoresService.serialize(financiador), status=status.HTTP_200_OK)

@@ -1,7 +1,7 @@
 from django.db import models
 from api.models.financiadores import Financiadores
-from api.models.area_tecnologica import AreasTecnologicas
-from api.models.colaborador import Colaboradores
+from api.models.areas_tecnologicas import AreasTecnologicas
+from api.models.colaboradores import Colaboradores
 
 class Projetos(models.Model):
     id_projeto = models.AutoField(primary_key=True)
