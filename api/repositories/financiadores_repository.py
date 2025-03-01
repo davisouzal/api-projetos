@@ -1,17 +1,17 @@
-from .models import Financiadores
+from api.models.financiadores import Financiadores
 
-class FinanciadorRepository:
+class FinanciadoresRepository:
     @staticmethod
     def get_all():
         return Financiadores.objects.all()
 
     @staticmethod
-    def get_by_id(pk):
-        return Financiadores.objects.get(pk=pk)
+    def get_by_id(id):
+        return Financiadores.objects.get(pk=id)
 
     @staticmethod
-    def filter_by_name(name):
-        return Financiadores.objects.filter(financiador__icontains=name)
+    def filter_by_financiador(financiador):
+        return Financiadores.objects.filter(financiador__icontains=financiador)
 
     @staticmethod
     def create(data):
