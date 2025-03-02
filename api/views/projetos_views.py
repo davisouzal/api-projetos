@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from api.services.projetos_service import ProjetosService
-from api.error_handler import error_handler
+from api.handlers.error_handler import error_handler
 from api.handlers.projetos_handler import format_all_projects, format_team_project
 from api.exceptions import ValidationException
 

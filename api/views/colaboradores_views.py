@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from api.services.colaboradores_service import ColaboradoresService
-from api.error_handler import error_handler
+from api.handlers.error_handler import error_handler
 
 @api_view(['GET', 'POST'])
 def colaboradores_list(request):

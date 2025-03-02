@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from api.services.financiadores_service import FinanciadoresService
-from api.error_handler import error_handler
+from api.handlers.error_handler import error_handler
 
 @api_view(['GET', 'POST'])
 def financiadores_list(request):
