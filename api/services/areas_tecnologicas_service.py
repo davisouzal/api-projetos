@@ -32,7 +32,7 @@ class AreasTecnologicasService:
 
     @staticmethod
     def update(instance, data):
-        serializer = AreasTecnologicasSerializer(instance, data=data)
+        serializer = AreasTecnologicasSerializer(instance, data=data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return serializer.data

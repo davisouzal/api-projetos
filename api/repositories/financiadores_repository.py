@@ -2,8 +2,8 @@ from api.models.financiadores import Financiadores
 
 class FinanciadoresRepository:
     @staticmethod
-    def get_all():
-        return Financiadores.objects.all()
+    def get_all(fields=None):
+        return Financiadores.objects.values(*fields) if fields else Financiadores.objects.all()
 
     @staticmethod
     def get_by_id(id):

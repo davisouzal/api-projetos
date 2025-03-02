@@ -32,7 +32,7 @@ class FinanciadoresService:
 
     @staticmethod
     def update(instance, data):
-        serializer = FinanciadoresSerializer(instance, data=data)
+        serializer = FinanciadoresSerializer(instance, data=data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return serializer.data

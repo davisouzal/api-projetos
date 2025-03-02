@@ -2,8 +2,8 @@ from api.models.areas_tecnologicas import AreasTecnologicas
 
 class AreasTecnologicasRepository:
     @staticmethod
-    def get_all():
-        return AreasTecnologicas.objects.all()
+    def get_all(fields=None):
+        return AreasTecnologicas.objects.values(*fields) if fields else AreasTecnologicas.objects.all()
 
     @staticmethod
     def get_by_id(id):

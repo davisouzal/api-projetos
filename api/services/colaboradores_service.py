@@ -14,6 +14,10 @@ class ColaboradoresService:
         else:
             colaboradores = ColaboradoresRepository.get_all()
         return ColaboradoresSerializer(colaboradores, many=True).data
+    
+    def list_all_selected_fields(fields):
+        colaboradores = ColaboradoresRepository.get_all(fields)
+        return colaboradores
 
     @staticmethod
     def get_by_id(id):
@@ -32,7 +36,7 @@ class ColaboradoresService:
 
     @staticmethod
     def update(instance, data):
-        serializer = ColaboradoresSerializer(instance, data=data)
+        serializer = ColaboradoresSerializer(instance, data=data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return serializer.data

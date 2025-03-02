@@ -2,16 +2,16 @@ from api.models import Projetos
 
 class ProjetosRepository:
     @staticmethod
-    def get_all():
-        return Projetos.objects.all()
+    def get_all(fields=None):
+        return Projetos.objects.values(*fields) if fields else Projetos.objects.all()
 
     @staticmethod
     def get_by_id(id):
-        return Projetos.objects.get(pk=id)
-
-    @staticmethod
-    def filter_by_name(name):
-        return Projetos.objects.filter(nome__icontains=name)
+        return Projetos.objects.select_related(
+            'id_area_tecnologica', 'id_financiador'
+        ).prefetch_related(
+            'equipe'
+        ).get(pk=id)
 
     @staticmethod
     def create(data):

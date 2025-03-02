@@ -2,8 +2,8 @@ from api.models import Colaboradores
 
 class ColaboradoresRepository:
     @staticmethod
-    def get_all():
-        return Colaboradores.objects.all()
+    def get_all(fields=None):
+        return Colaboradores.objects.values(*fields) if fields else Colaboradores.objects.all()
 
     @staticmethod
     def get_by_id(id):

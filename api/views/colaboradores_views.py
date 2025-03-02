@@ -40,3 +40,45 @@ def colaboradores_detail(request, id):
     except Exception as e:
         errorResponse, status_code = error_handler(e)
         return Response(errorResponse, status=status_code)
+    
+@api_view(['GET'])
+def colaboradores_listar(request):
+    try:
+        fields = ['id_colaborador', 'nome']
+        colaboradores = ColaboradoresService.list_all_selected_fields(fields)
+        return Response(colaboradores)
+    
+    except Exception as e:
+        errorResponse, status_code = error_handler(e)
+        return Response(errorResponse, status=status_code)
+    
+@api_view(['POST'])
+def colaboradores_create(request):
+    try:
+        data = ColaboradoresService.create(request.data)
+        return Response(data, status=status.HTTP_201_CREATED)
+    
+    except Exception as e:
+        errorResponse, status_code = error_handler(e)
+        return Response(errorResponse, status=status_code)
+    
+@api_view(['GET'])
+def colaboradores_view(request, id):
+    try:
+        colaborador = ColaboradoresService.get_by_id(id)
+        return Response(ColaboradoresService.serialize(colaborador), status=status.HTTP_200_OK)
+    
+    except Exception as e:
+        errorResponse, status_code = error_handler(e)
+        return Response(errorResponse, status=status_code)
+    
+@api_view(['PATCH'])
+def colaboradores_edit(request, id):
+    try:
+        colaborador = ColaboradoresService.get_by_id(id)
+        data = ColaboradoresService.update(colaborador, request.data)
+        return Response(data, status=status.HTTP_200_OK)
+    
+    except Exception as e:
+        errorResponse, status_code = error_handler(e)
+        return Response(errorResponse, status=status_code)
