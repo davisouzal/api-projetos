@@ -13,7 +13,7 @@ from api.handlers.error_handler import error_handler
     properties={
         'area_tecnologica': openapi.Schema(type=openapi.TYPE_STRING, description='Nome da área tecnológica')
     }
-))
+), responses={201: 'Área tecnológica criada', 400: 'Erro de validação', 500: 'Erro interno'})
 @api_view(['GET', 'POST'])
 def areas_tecnologicas_list(request):
     "Listar ou criar áreas tecnológicas"

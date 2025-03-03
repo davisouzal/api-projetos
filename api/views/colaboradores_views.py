@@ -15,7 +15,7 @@ from api.handlers.error_handler import error_handler
         'nome': openapi.Schema(type=openapi.TYPE_STRING, description='Nome do colaborador'),
         'dt_nascimento': openapi.Schema(type=openapi.TYPE_STRING, format=openapi.FORMAT_DATE, description='Data de nascimento do colaborador')
     }
-))
+), responses={201: 'Colaborador criado', 400: 'Erro de validação', 500: 'Erro interno'})
 @api_view(['GET', 'POST'])
 def colaboradores_list(request):
     try:

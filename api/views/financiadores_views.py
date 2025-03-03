@@ -13,7 +13,7 @@ from api.handlers.error_handler import error_handler
     properties={
         'financiador': openapi.Schema(type=openapi.TYPE_STRING, description='Nome do financiador')
     }
-))
+), responses={201: 'Financiador criado', 400: 'Erro de validação',500: 'Erro interno'})
 @api_view(['GET', 'POST'])
 def financiadores_list(request):
     "Listar ou criar financiadores"
