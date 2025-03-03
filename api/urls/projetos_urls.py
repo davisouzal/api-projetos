@@ -1,13 +1,12 @@
 from django.urls import path
 from api.views.projetos_views import (
-    projetos_list, projetos_detail, projetos_info_form, projetos_listar, projetos_create,
+    delete_project, projetos_info_form, projetos_listar, projetos_create,
     inactivate_project, activate_project, edit_project, view_project, 
     get_team_project, edit_team_project
 )
 
 urlpatterns = [
-    path('', projetos_list, name='projetos-list'),
-    path('<int:id>/', projetos_detail, name='projetos-detail'),
+    path('<int:id>/excluir', delete_project, name='projetos-detail'),
     path('form/', projetos_info_form, name='projetos-info-form'),
     path('listar/', projetos_listar, name='projetos-listar'),
     path('cadastrar/', projetos_create, name='projetos-create'),
