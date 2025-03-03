@@ -5,4 +5,4 @@ class Financiadores(models.Model):
     financiador = models.CharField(max_length=100)
     
     def __str__(self):
-        return self.nome
+        return self.financiador

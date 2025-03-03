@@ -12,7 +12,7 @@ class Projetos(models.Model):
     ativo = models.BooleanField()
     inicio_vigencia = models.DateField()
     fim_vigencia = models.DateField()
-    valor = models.FloatField(2)
+    valor = models.DecimalField(max_digits=10, decimal_places=2)
     qtd_membros = models.IntegerField()
     equipe = models.ManyToManyField(Colaboradores)
 
