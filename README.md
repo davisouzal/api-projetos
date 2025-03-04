@@ -62,20 +62,6 @@ http://127.0.0.1:8000/swagger/
 Para acessar a documentação no formato Redoc:
 http://127.0.0.1:8000/redoc/
 
-Executando com Docker
-
-Caso prefira rodar via Docker, utilize os seguintes comandos:
-
-    Construa a imagem
-
-docker-compose build
-
-Inicie os containers
-
-    docker-compose up
-
-O serviço estará disponível em http://127.0.0.1:8000/.
-
 ## Contato
 
 Agora é só aproveitar! Qualquer dúvida, entrar em contato pelo [meu GitHub](https://github.com/davisouzal)! 
